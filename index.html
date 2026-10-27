@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17131f">
+  <meta name="description" content="Consultoria online de personal trainer com treino personalizado, acompanhamento e estratégia para evoluir com consistência.">
+  <title>Giovanna Silva | Personal Trainer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #100e14;
+      --panel: #191620;
+      --panel2: #211b2b;
+      --text: #fbf8ff;
+      --muted: #bcb4c7;
+      --purple: #b58aff;
+      --purple2: #8e5ee8;
+      --line: rgba(255,255,255,.12);
+      --radius: 22px;
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: "DM Sans", sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px 0; }
+    .brand { display:flex; align-items:center; gap:12px; font-family:Manrope,sans-serif; font-weight:800; letter-spacing:-.04em; }
+    .brand-mark { display:grid; place-items:center; width:42px; height:42px; border-radius:14px; background:linear-gradient(135deg,var(--purple),var(--purple2)); color:#17111f; font-weight:900; }
+    .brand small { display:block; color:var(--muted); font:500 10px "DM Sans",sans-serif; letter-spacing:.17em; text-transform:uppercase; }
+    .nav-links { display:flex; align-items:center; gap:28px; color:var(--muted); font-size:14px; }
+    .nav-links a:hover, .footer a:hover { color:var(--purple); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:52px; padding:0 22px; border-radius:999px; background:var(--purple); color:#1b1326; font-weight:800; border:1px solid transparent; transition:transform .2s, background .2s; cursor:pointer; }
+    .btn:hover { transform:translateY(-2px); background:#c6a7ff; }
+    .btn.secondary { background:transparent; color:var(--text); border-color:var(--line); }
+    .btn.secondary:hover { border-color:var(--purple); }
+    .hero { padding:64px 0 90px; overflow:hidden; }
+    .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; color:var(--purple); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.18em; }
+    .eyebrow:before { content:""; width:26px; height:1px; background:var(--purple); }
+    h1,h2,h3 { font-family:Manrope,sans-serif; line-height:1.08; letter-spacing:-.045em; margin:0; }
+    h1 { font-size:clamp(42px,6vw,76px); margin:22px 0; max-width:700px; }
+    h1 span { color:var(--purple); }
+    .lead { color:var(--muted); font-size:18px; max-width:570px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .micro { color:var(--muted); font-size:12px; margin-top:18px; }
+    .visual { min-height:510px; position:relative; display:flex; align-items:center; justify-content:center; }
+    .visual-halo { position:absolute; width:min(440px,100%); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,rgba(181,138,255,.28),rgba(142,94,232,.05) 56%,transparent 70%); }
+    .visual-card { position:relative; width:min(390px,90%); min-height:450px; border:1px solid rgba(255,255,255,.16); border-radius:190px 190px 28px 28px; overflow:hidden; background:linear-gradient(155deg,#3b2b4e,#201a29 55%,#14111a); display:flex; align-items:end; justify-content:center; }
+    .visual-card:before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 28%,rgba(181,138,255,.25),transparent 46%),linear-gradient(0deg,rgba(16,14,20,.72),transparent 65%); }
+    .silhouette { position:absolute; width:68%; height:75%; bottom:-3%; left:16%; opacity:.82; }
+    .visual-caption { position:absolute; bottom:25px; left:25px; right:25px; z-index:2; }
+    .visual-caption strong { display:block; font:800 22px Manrope,sans-serif; }
+    .visual-caption span { color:#d6c9e8; font-size:13px; }
+    .float-tag { position:absolute; z-index:3; background:rgba(25,22,32,.92); border:1px solid var(--line); border-radius:16px; padding:13px 16px; box-shadow:0 16px 45px rgba(0,0,0,.2); }
+    .float-tag strong { display:block; font-size:13px; }
+    .float-tag span { color:var(--muted); font-size:11px; }
+    .tag-one { top:72px; right:-8px; }
+    .tag-two { bottom:76px; left:-18px; }
+    .mini-icon { color:var(--purple); font-size:20px; margin-right:7px; }
+    .trust { border-block:1px solid var(--line); background:#15121b; }
+    .trust-grid { display:grid; grid-template-columns:repeat(3,1fr); }
+    .trust-item { padding:24px 20px; text-align:center; border-right:1px solid var(--line); }
+    .trust-item:last-child { border:0; }
+    .trust-item strong { display:block; font:800 15px Manrope,sans-serif; }
+    .trust-item span { color:var(--muted); font-size:12px; }
+    section { padding:94px 0; }
+    .section-head { max-width:700px; margin-bottom:42px; }
+    .section-head h2 { font-size:clamp(32px,4vw,52px); margin:16px 0; }
+    .section-head p { color:var(--muted); margin:0; font-size:16px; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:28px; }
+    .card-icon { width:48px; height:48px; display:grid; place-items:center; border-radius:15px; background:rgba(181,138,255,.12); color:var(--purple); font-size:22px; margin-bottom:24px; }
+    .card h3 { font-size:21px; margin-bottom:12px; letter-spacing:-.03em; }
+    .card p { color:var(--muted); margin:0; font-size:14px; }
+    .about { background:linear-gradient(135deg,#191521,#121016); border-block:1px solid var(--line); }
+    .about-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:70px; align-items:center; }
+    .about-art { min-height:370px; border-radius:var(--radius); background:radial-gradient(circle at 35% 35%,rgba(181,138,255,.32),transparent 35%),linear-gradient(145deg,#2b2238,#17131e); border:1px solid var(--line); padding:28px; display:flex; align-items:end; }
+    .about-art blockquote { margin:0; font:700 clamp(24px,3vw,36px)/1.2 Manrope,sans-serif; letter-spacing:-.04em; }
+    .about-art blockquote span { color:var(--purple); }
+    .about-copy h2 { font-size:clamp(32px,4vw,50px); margin:16px 0 22px; }
+    .about-copy p { color:var(--muted); }
+    .checks { list-style:none; padding:0; margin:26px 0 0; display:grid; gap:13px; }
+    .checks li { display:flex; align-items:start; gap:11px; font-size:14px; }
+    .check { color:var(--purple); font-weight:900; }
+    .process-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; counter-reset:steps; }
+    .step { padding:26px; border-top:1px solid var(--purple); background:linear-gradient(180deg,rgba(181,138,255,.07),transparent); }
+    .step-num { color:var(--purple); font:800 13px Manrope,sans-serif; letter-spacing:.14em; margin-bottom:24px; }
+    .step h3 { font-size:21px; margin-bottom:12px; }
+    .step p { color:var(--muted); font-size:14px; margin:0; }
+    .cta-band { padding:0 0 90px; }
+    .cta-inner { border-radius:28px; padding:clamp(30px,6vw,66px); background:linear-gradient(120deg,#352448,#21182e 62%,#191420); border:1px solid rgba(181,138,255,.28); display:flex; justify-content:space-between; align-items:center; gap:28px; }
+    .cta-inner h2 { font-size:clamp(30px,4vw,48px); max-width:650px; margin:14px 0; }
+    .cta-inner p { color:#d0c5dc; margin:0; max-width:600px; }
+    .faq { max-width:800px; }
+    details { border-bottom:1px solid var(--line); padding:20px 0; }
+    summary { cursor:pointer; font-weight:700; list-style:none; display:flex; justify-content:space-between; gap:20px; }
+    summary:after { content:"+"; color:var(--purple); font-size:22px; line-height:1; }
+    details[open] summary:after { content:"−"; }
+    details p { color:var(--muted); font-size:14px; margin-bottom:0; }
+    .footer { border-top:1px solid var(--line); padding:32px 0; color:var(--muted); font-size:13px; }
+    .footer-row { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px; }
+    .footer-links { display:flex; gap:20px; }
+    .wa-float { position:fixed; z-index:10; bottom:20px; right:20px; display:flex; align-items:center; gap:10px; border-radius:999px; padding:13px 18px; background:#b58aff; color:#1b1326; font-weight:800; box-shadow:0 12px 35px rgba(0,0,0,.3); }
+    .wa-float svg { width:20px; height:20px; }
+    @media (max-width: 820px) {
+      .nav-links { display:none; }
+      .hero { padding:36px 0 65px; }
+      .hero-grid,.about-grid { grid-template-columns:1fr; gap:30px; }
+      .visual { min-height:440px; }
+      .visual-card { min-height:400px; }
+      .tag-one { right:0; }
+      .tag-two { left:0; }
+      .cards,.process-grid { grid-template-columns:1fr; }
+      section { padding:70px 0; }
+      .about-art { min-height:270px; }
+      .cta-inner { align-items:flex-start; flex-direction:column; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width:min(var(--max),calc(100% - 28px)); }
+      .brand { font-size:14px; }
+      .brand-mark { width:38px; height:38px; }
+      .nav .btn { min-height:42px; padding:0 14px; font-size:12px; }
+      h1 { font-size:43px; }
+      .lead { font-size:16px; }
+      .hero-actions { flex-direction:column; align-items:stretch; }
+      .visual { min-height:390px; }
+      .visual-card { min-height:360px; }
+      .float-tag { padding:10px 12px; }
+      .trust-grid { grid-template-columns:1fr; }
+      .trust-item { border-right:0; border-bottom:1px solid var(--line); }
+      .trust-item:last-child { border-bottom:0; }
+      .wa-float { bottom:12px; right:12px; padding:12px 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*:before,*:after { transition:none !important; } }
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="Giovanna Silva Personal Trainer - início">
+      <span class="brand-mark">GS</span>
+      <span>Giovanna Silva<small>Personal Trainer</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#consultoria">Consultoria</a><a href="#sobre">Sobre</a><a href="#como-funciona">Como funciona</a>
+    </nav>
+    <a class="btn" href="https://wa.me/5511996762765?text=Ol%C3%A1%2C%20Giovanna!%20Quero%20saber%20mais%20sobre%20a%20consultoria%20online." target="_blank" rel="noopener">Falar comigo ↗</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Consultoria online personalizada</div>
+          <h1>Seu objetivo.<br>Seu ritmo.<br><span>Sua evolução.</span></h1>
+          <p class="lead">Treinamento pensado para a sua rotina, seus objetivos e seu nível — com orientação profissional para você evoluir com mais segurança e consistência.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/5511996762765?text=Ol%C3%A1%2C%20Giovanna!%20Tenho%20interesse%20na%20consultoria%20online." target="_blank" rel="noopener">Quero começar ↗</a>
+            <a class="btn secondary" href="#consultoria">Conhecer a consultoria</a>
+          </div>
+          <p class="micro">Treinos individualizados • Acompanhamento online • Estratégia para sua rotina</p>
+        </div>
+        <div class="visual" aria-label="Arte abstrata de fitness">
+          <div class="visual-halo"></div>
+          <div class="visual-card">
+            <svg class="silhouette" viewBox="0 0 300 390" aria-hidden="true">
+              <defs><linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d7baff"/><stop offset="1" stop-color="#7850b5"/></linearGradient></defs>
+              <circle cx="151" cy="65" r="43" fill="url(#body)"/>
+              <path d="M105 120 Q150 95 196 120 L218 218 L195 239 L204 376 L158 376 L149 267 L136 376 L91 376 L105 238 L82 215 Z" fill="url(#body)"/>
+              <path d="M105 132 L59 217 L74 229 L126 169 Z M194 132 L240 211 L226 226 L175 169 Z" fill="url(#body)"/>
+              <path d="M112 126 Q150 150 190 126 L183 192 Q151 209 119 192 Z" fill="#2b2039" opacity=".7"/>
+            </svg>
+            <div class="visual-caption"><strong>Treino com propósito.</strong><span>Planejamento que acompanha você.</span></div>
+          </div>
+          <div class="float-tag tag-one"><strong><span class="mini-icon">✦</span>Feito para você</strong><span>Individualizado de verdade</span></div>
+          <div class="float-tag tag-two"><strong><span class="mini-icon">↗</span>Constância primeiro</strong><span>Um passo de cada vez</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="wrap trust-grid">
+        <div class="trust-item"><strong>Plano individualizado</strong><span>Objetivos e rotina em primeiro lugar</span></div>
+        <div class="trust-item"><strong>Orientação profissional</strong><span>Treino com propósito e estratégia</span></div>
+        <div class="trust-item"><strong>Acompanhamento online</strong><span>Mais clareza para seguir seu plano</span></div>
+      </div>
+    </div>
+
+    <section id="consultoria">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">A consultoria</div>
+          <h2>Não é só receber um treino.<br>É ter um plano.</h2>
+          <p>A consultoria online conecta seus objetivos a uma estratégia de treinamento possível de manter. O plano é construído considerando seu contexto, sua experiência e os recursos que você tem disponíveis.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="card-icon">◎</div><h3>Treino personalizado</h3><p>Uma programação de exercícios alinhada ao seu objetivo, nível de experiência, rotina e equipamentos disponíveis.</p></article>
+          <article class="card"><div class="card-icon">↗</div><h3>Direção e consistência</h3><p>Mais clareza sobre o que fazer, como organizar os treinos e como construir uma rotina sustentável.</p></article>
+          <article class="card"><div class="card-icon">✦</div><h3>Acompanhamento</h3><p>Um canal para alinhar dúvidas e ajustar o planejamento conforme o formato e as condições combinadas na consultoria.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="wrap about-grid">
+        <div class="about-art"><blockquote>Treinar melhor começa com um plano que <span>faz sentido para você.</span></blockquote></div>
+        <div class="about-copy">
+          <div class="eyebrow">Prazer, sou Giovanna</div>
+          <h2>Seu treino precisa caber na sua vida.</h2>
+          <p>Sou Giovanna Silva, Personal Trainer. Minha proposta é ajudar você a treinar com planejamento, orientação e objetivos claros — respeitando sua individualidade e o momento em que você está.</p>
+          <p>A consultoria online é para quem busca organização e direcionamento para treinar onde estiver, sem depender de soluções genéricas.</p>
+          <ul class="checks">
+            <li><span class="check">✓</span><span>Planejamento adaptado à sua realidade.</span></li>
+            <li><span class="check">✓</span><span>Objetivos definidos de forma realista.</span></li>
+            <li><span class="check">✓</span><span>Foco em execução, progressão e consistência.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Simples e organizado</div>
+          <h2>Como começar sua consultoria</h2>
+          <p>Você entra em contato, conversamos sobre seus objetivos e alinhamos os próximos passos.</p>
+        </div>
+        <div class="process-grid">
+          <article class="step"><div class="step-num">PASSO 01</div><h3>Me conte sobre você</h3><p>Vamos conversar sobre seus objetivos, sua experiência, sua rotina e onde você treina.</p></article>
+          <article class="step"><div class="step-num">PASSO 02</div><h3>Alinhamos o plano</h3><p>Com as informações iniciais, definimos a proposta de acompanhamento e os detalhes da consultoria.</p></article>
+          <article class="step"><div class="step-num">PASSO 03</div><h3>Comece a evoluir</h3><p>Você recebe a orientação combinada e segue um planejamento estruturado para sua rotina.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap cta-band">
+      <div class="cta-inner">
+        <div><div class="eyebrow">Seu próximo passo</div><h2>Vamos tirar seus objetivos do papel?</h2><p>Me chame no WhatsApp para conhecer a consultoria online e descobrir se ela faz sentido para você.</p></div>
+        <a class="btn" href="https://wa.me/5511996762765?text=Ol%C3%A1%2C%20Giovanna!%20Quero%20conhecer%20a%20consultoria%20online." target="_blank" rel="noopener">Quero conversar ↗</a>
+      </div>
+    </div>
+
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Dúvidas frequentes</div>
+          <h2>Antes de começar</h2>
+        </div>
+        <div class="faq">
+          <details><summary>Posso fazer a consultoria treinando em casa?</summary><p>Sim. O planejamento pode considerar treino em casa ou academia, conforme os equipamentos disponíveis e os objetivos alinhados.</p></details>
+          <details><summary>A consultoria serve para iniciantes?</summary><p>Podemos conversar sobre seu nível de experiência e suas necessidades para avaliar a melhor forma de iniciar com segurança.</p></details>
+          <details><summary>Como recebo informações sobre valores e planos?</summary><p>Entre em contato pelo WhatsApp. Vou explicar as opções disponíveis, o que está incluído e as condições de acompanhamento.</p></details>
+          <details><summary>Como faço para começar?</summary><p>Toque em qualquer botão de WhatsApp nesta página e me conte um pouco sobre seu objetivo.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <div>© <span id="year"></span> Giovanna Silva Personal Trainer. Todos os direitos reservados.</div>
+      <div class="footer-links"><a href="https://www.instagram.com/giovannasilvapersonal/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://wa.me/5511996762765" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/5511996762765?text=Ol%C3%A1%2C%20Giovanna!%20Vim%20pela%20sua%20Landing%20Page." target="_blank" rel="noopener" aria-label="Falar com Giovanna pelo WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.1 0C5.55 0 .22 5.33.22 11.88c0 2.1.55 4.15 1.6 5.96L.12 24l6.32-1.66a11.9 11.9 0 0 0 5.66 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.23-6.15-3.47-8.42ZM12.1 21.75a9.9 9.9 0 0 1-5.05-1.39l-.36-.21-3.75.98 1-3.65-.24-.38a9.85 9.85 0 1 1 8.4 4.65Zm5.42-7.39c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.3 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
+    Fale comigo
+  </a>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
