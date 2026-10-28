@@ -47,11 +47,12 @@
     .lead { color:var(--muted); font-size:18px; max-width:570px; }
     .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
     .micro { color:var(--muted); font-size:12px; margin-top:18px; }
-    .visual { min-height:510px; position:relative; display:flex; align-items:center; justify-content:center; }
+    .visual { min-height:510px; position:relative; display:flex; align-items:center; justify-content:center; padding-bottom:64px; }
     .visual-halo { position:absolute; width:min(440px,100%); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,rgba(181,138,255,.28),rgba(142,94,232,.05) 56%,transparent 70%); }
-    .visual-card { position:relative; width:min(390px,90%); min-height:450px; border:1px solid rgba(255,255,255,.16); border-radius:190px 190px 28px 28px; overflow:hidden; background:linear-gradient(155deg,#3b2b4e,#201a29 55%,#14111a); display:flex; align-items:end; justify-content:center; }
+    .visual-card { position:relative; width:min(350px,100%); height:clamp(360px,42vw,470px); min-height:0; border:1px solid rgba(255,255,255,.16); border-radius:clamp(130px,15vw,170px) clamp(130px,15vw,170px) 28px 28px; overflow:hidden; background:linear-gradient(155deg,#3b2b4e,#201a29 55%,#14111a); display:flex; align-items:end; justify-content:center; flex-shrink:0; }
+    .visual-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block; }
     .visual-card:before { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 28%,rgba(181,138,255,.25),transparent 46%),linear-gradient(0deg,rgba(16,14,20,.72),transparent 65%); }
-    .silhouette { position:absolute; width:68%; height:75%; bottom:-3%; left:16%; opacity:.82; }
+    .silhouette { display:none; }
     .visual-caption { position:absolute; bottom:25px; left:25px; right:25px; z-index:2; }
     .visual-caption strong { display:block; font:800 22px Manrope,sans-serif; }
     .visual-caption span { color:#d6c9e8; font-size:13px; }
@@ -59,7 +60,7 @@
     .float-tag strong { display:block; font-size:13px; }
     .float-tag span { color:var(--muted); font-size:11px; }
     .tag-one { top:72px; right:-8px; }
-    .tag-two { bottom:76px; left:-18px; }
+    .tag-two { top:52%; bottom:auto; left:-18px; transform:none; }
     .mini-icon { color:var(--purple); font-size:20px; margin-right:7px; }
     .trust { border-block:1px solid var(--line); background:#15121b; }
     .trust-grid { display:grid; grid-template-columns:repeat(3,1fr); }
@@ -110,10 +111,13 @@
       .nav-links { display:none; }
       .hero { padding:36px 0 65px; }
       .hero-grid,.about-grid { grid-template-columns:1fr; gap:30px; }
-      .visual { min-height:440px; }
-      .visual-card { min-height:400px; }
-      .tag-one { right:0; }
-      .tag-two { left:0; }
+      .visual { min-height:510px; width:100%; min-width:0; padding-top:0; padding-bottom:78px; align-items:flex-end; }
+      .visual-card { width:min(340px,100%); height:420px; }
+      .tag-one { top:auto; bottom:0; left:0; right:auto; width:calc(50% - 6px); box-sizing:border-box; }
+      .tag-two { top:auto; bottom:0; left:auto; right:0; transform:none; width:calc(50% - 6px); box-sizing:border-box; }
+      .float-tag { padding:10px 9px; }
+      .float-tag strong { font-size:12px; line-height:1.3; }
+      .float-tag span { font-size:10px; line-height:1.3; }
       .cards,.process-grid { grid-template-columns:1fr; }
       section { padding:70px 0; }
       .about-art { min-height:270px; }
@@ -127,9 +131,13 @@
       h1 { font-size:43px; }
       .lead { font-size:16px; }
       .hero-actions { flex-direction:column; align-items:stretch; }
-      .visual { min-height:390px; }
-      .visual-card { min-height:360px; }
-      .float-tag { padding:10px 12px; }
+      .visual { min-height:480px; width:100%; min-width:0; padding-top:0; padding-bottom:76px; align-items:flex-end; }
+      .visual-card { width:min(320px,100%); height:390px; }
+      .tag-one { top:auto; bottom:0; left:0; right:auto; width:calc(50% - 5px); box-sizing:border-box; }
+      .tag-two { top:auto; bottom:0; left:auto; right:0; transform:none; width:calc(50% - 5px); box-sizing:border-box; }
+      .float-tag { padding:9px 8px; }
+      .float-tag strong { font-size:11px; line-height:1.3; }
+      .float-tag span { font-size:9px; line-height:1.3; }
       .trust-grid { grid-template-columns:1fr; }
       .trust-item { border-right:0; border-bottom:1px solid var(--line); }
       .trust-item:last-child { border-bottom:0; }
@@ -166,13 +174,7 @@
         <div class="visual" aria-label="Arte abstrata de fitness">
           <div class="visual-halo"></div>
           <div class="visual-card">
-            <svg class="silhouette" viewBox="0 0 300 390" aria-hidden="true">
-              <defs><linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d7baff"/><stop offset="1" stop-color="#7850b5"/></linearGradient></defs>
-              <circle cx="151" cy="65" r="43" fill="url(#body)"/>
-              <path d="M105 120 Q150 95 196 120 L218 218 L195 239 L204 376 L158 376 L149 267 L136 376 L91 376 L105 238 L82 215 Z" fill="url(#body)"/>
-              <path d="M105 132 L59 217 L74 229 L126 169 Z M194 132 L240 211 L226 226 L175 169 Z" fill="url(#body)"/>
-              <path d="M112 126 Q150 150 190 126 L183 192 Q151 209 119 192 Z" fill="#2b2039" opacity=".7"/>
-            </svg>
+            <img class="visual-photo" src="images/giovanna.jfif" width="470" alt="Foto da personal trainer Giovanna Silva">
             <div class="visual-caption"><strong>Treino com propósito.</strong><span>Planejamento que acompanha você.</span></div>
           </div>
           <div class="float-tag tag-one"><strong><span class="mini-icon">✦</span>Feito para você</strong><span>Individualizado de verdade</span></div>
